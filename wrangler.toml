@@ -2,5 +2,6 @@ name = "cdn" # todo
 main = "./src/index.ts"
 compatibility_date = "2023-03-25"
 
-[vars]
-WEB_URL=""
+kv_namespaces = [
+  { binding = "datastore", id = "8b580bbb57c84b549e54eecda8d5dccc" }
+]

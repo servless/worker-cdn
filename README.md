@@ -2,13 +2,20 @@
 
 基于 CloudFlare Workers 的网站加速服务
 
-## 仓库镜像
-
-- https://git.jetsung.com/servless/worker-cdn
-- https://framagit.org/servless/worker-cdn
-- https://github.com/servless/worker-cdn
-
 ## 部署教程
+
+### 通过 GitHub Actions 发布至 CloudFlare
+
+1. 从 CloudFlare 获取 `CLOUDFLARE_API_TOKEN` 值，并设置到项目。
+
+   > `https://github.com/<ORG>/worker-cdn/settings/secrets/actions`
+
+2. **可选**）设置`别名`。创建 `KV`、，并绑定到此 Workers 服务。
+   - 2.1a 手动后台绑定，（`Settings` -> `Variables` -> `KV Namespace Bindings` -> `Add binding` -> `Variable name (datastore)`, `选择创建的 KV`）
+   - 2.1b 通过命令行创建：`wrangler kv:namespace create datastore`
+3. `KV` 设置 `别名值`，Key 为别名（单词），Value（目标域名，含 `http(s)://`）。
+
+### 本地部署到 CloudFlare
 
 1. 注册 [CloudFlare 账号](https://www.cloudflare.com/)，并且设置 **Workers** 域名 (比如：`xxx.workers.dev`)
 2. 安装 [Wrangler 命令行工具](https://developers.cloudflare.com/workers/wrangler/)。
@@ -60,21 +67,8 @@
 
    在 Cloudflare Workers 的管理界面中，点击 `Triggers` 选项卡，然后点击 `Custom Domians` 中的 `Add Custom Domain` 按钮以绑定域名。
 
-## Template: worker-typescript
+## 仓库镜像
 
-- https://github.com/cloudflare/workers-sdk/tree/main/templates
-
-```bash
-# full repository clone
-$ git clone --depth 1 https://github.com/cloudflare/workers-sdk
-
-# copy the "worker-typescript" example to "my-project" directory
-$ cp -rf workers-sdk/templates/worker-typescript my-project
-
-# setup & begin development
-$ cd my-project && npm install && npm run dev
-```
-
-```bash
-HTTP_PROXY=http://localhost:20171 wrangler publish
-```
+- https://git.jetsung.com/servless/worker-cdn
+- https://framagit.org/servless/worker-cdn
+- https://github.com/servless/worker-cdn
