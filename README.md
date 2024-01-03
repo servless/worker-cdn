@@ -13,7 +13,11 @@
 2. **可选**）设置`别名`。创建 `KV`、，并绑定到此 Workers 服务。
    - 2.1a 手动后台绑定，（`Settings` -> `Variables` -> `KV Namespace Bindings` -> `Add binding` -> `Variable name (datastore)`, `选择创建的 KV`）
    - 2.1b 通过命令行创建：`wrangler kv:namespace create datastore`
-3. `KV` 设置 `别名值`，Key 为别名（单词），Value（目标域名，含 `http(s)://`）。
+3. `KV` 设置 `别名值`，Key 为别名（单词），Value（目标网址，含 `http(s)://`）。
+
+4. 最终访问域名地址组合为：
+   > https://wcdn.kkgo.cc/github.com/servless/worker-cdn > https://wcdn.kkgo.cc/github/servless/worker-cdn （别名）
+   > https://wcdn.kkgo.cc/rawgh/servless/worker-cdn/main/README.md （[别名](https://raw.githubusercontent.com/servless/worker-cdn/main/README.md)）
 
 ### 本地部署到 CloudFlare
 
