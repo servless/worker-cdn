@@ -16,15 +16,16 @@
 3. `KV` 设置 `别名值`，Key 为别名（单词），Value（目标网址，含 `http(s)://`）。
 
 4. 最终访问域名地址组合为（案例）：
-   > https://wcdn.kkgo.cc/github.com/servless/worker-cdn > https://wcdn.kkgo.cc/github/servless/worker-cdn （别名）
-   > https://wcdn.kkgo.cc/rawgh/servless/worker-cdn/main/README.md （[别名](https://raw.githubusercontent.com/servless/worker-cdn/main/README.md)）
+   - https://wcdn.kkgo.cc/github.com/servless/worker-cdn
+   - https://wcdn.kkgo.cc/github/servless/worker-cdn （别名）
+   - https://wcdn.kkgo.cc/rawgh/servless/worker-cdn/main/README.md （[别名](https://raw.githubusercontent.com/servless/worker-cdn/main/README.md)）
 
 ### 本地部署到 CloudFlare
 
 1. 注册 [CloudFlare 账号](https://www.cloudflare.com/)，并且设置 **Workers** 域名 (比如：`xxx.workers.dev`)
 2. 安装 [Wrangler 命令行工具](https://developers.cloudflare.com/workers/wrangler/)。
    ```bash
-    npm install -g wrangler
+   npm install -g wrangler
    ```
 3. 登录 `Wrangler`（可能需要扶梯）：
 
